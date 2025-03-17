@@ -1,0 +1,41 @@
+aggregation pilpelines stages
+=============================
+
+1.$(filter Data):
+->db.users.aggefgate([
+    {$match:{age:{$gt:25}}}   //-gt->greater then
+])
+
+2.$group(group & aggegae the data)->
+->db.products.aggregate([
+    {$group:{_id:"$category"}}
+])
+3.$sot(Sorting)->asc/desc
+
+->db.products.aggregate([
+    {$sort:{price:-1}}  _1 or desendin 1 for increasing
+])
+
+
+
+4.$project(for selrcting specified fields):-
+->db.products.aggregate([
+    {$projects:{name:1,price:1,i_id:0}}
+])
+
+5.$lookup method (join between two collections):-
+//lets assume you have two collection -users products 
+
+db.users.aggregate([
+    {$lookup:{
+        from:"oders",  //jis particular collection se match krana h
+        localFields:"user_id",
+        foreinField:"_id",
+        as:"ordersDetails",  //collection ka nme jiske basis par store karana ho
+}}
+//unwind method
+->iska kam ye h ki order details ke andar jo bhi likha hoga use pura as it's dikha dega
+])
+
+//limit method
+when we have ti return a specific number of document at that 

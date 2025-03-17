@@ -1,0 +1,20 @@
+$eq: Matches values that are equal to a specified value.
+$ne: Matches values that are not equal to a specified value.
+$gt: Matches values that are greater than a specified value.
+$gte: Matches values that are greater than or equal to a specified value.
+$lt: Matches values that are less than a specified value.
+$lte: Matches values that are less than or equal to a specified value.
+$in: Matches any of the values specified in an array.
+$nin: Matches none of the values specified in an array.
+$exists: Matches documents that have, or do not have, a specified field.
+$type: Matches values that are of a specified data type.
+$mod: Matches values that, when divided by a specified divisor, have a specified remainder.
+$regex: Matches values that match a specified regular expression.
+$text: Runs a text search on text-indexed fields.
+$all: Matches arrays that contain all elements specified in a specified array.
+$size: Matches arrays that are a specified size.
+$and: Matches the conditions specified in all the given expressions.
+$or: Matches the conditions specified in any of the given expressions.
+$nor: Matches the conditions specified in none of the given expressions.
+$not: Inverts the effect of a query expression and matches documents that do not match the expression.
+$elemMatch: Matches documents that contain an array field with at least one element that matches all the specified array of expressions.
